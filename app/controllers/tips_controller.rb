@@ -69,6 +69,8 @@ class TipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tip_params
-      params[:tip]
+      # Strong Params
+      # Allow content to be set
+      params[:tip].permit(:content)
     end
 end
