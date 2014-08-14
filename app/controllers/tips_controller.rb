@@ -15,10 +15,12 @@ class TipsController < ApplicationController
   # GET /tips/new
   def new
     @tip = Tip.new
+    # render :new
   end
 
   # GET /tips/1/edit
   def edit
+    # render :edit
   end
 
   # POST /tips
@@ -26,6 +28,11 @@ class TipsController < ApplicationController
   def create
     @tip = Tip.new(tip_params)
 
+    # if @tip.save
+    #   redirect_to ...
+    # else
+    #   render :new
+    # end
     respond_to do |format|
       if @tip.save
         format.html { redirect_to @tip, notice: 'Tip was successfully created.' }
